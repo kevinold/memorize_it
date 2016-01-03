@@ -4,6 +4,7 @@
 'use strict';
 
 import React from 'react-native';
+import Button from 'react-native-button';
 const {
   AppRegistry,
   StyleSheet,
@@ -46,9 +47,23 @@ const App = connect(
 )(
   ({ count, dispatch }) => (
     <View style={styles.appContainer}>
-      <Text onPress={() => dispatch({ type: 'CLICK' })}>
-        YOU CLICKED ME {count} TIME{count === 1 ? '' : 'S'}!
-      </Text>
+
+      <View style={styles.appContainer}>
+        <Text>
+        CLICKED {count} TIME{count === 1 ? '' : 'S'}!
+        </Text>
+      </View>
+
+      <View style={styles.buttonContainer}>
+
+        <Button
+          style={styles.button}
+          onPress={() => dispatch({ type: 'CLICK' })}
+        >
+        +
+        </Button>
+      </View>
+
     </View>
   )
 );
@@ -59,6 +74,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  buttonContainer: {
+    flex: 1,
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
+    marginBottom: 50,
+    marginRight: -325
+  },
+  button: {
+    fontSize: 100,
+    color: 'green'
+  }
 });
 
 
