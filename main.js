@@ -10,6 +10,7 @@ const {
   StyleSheet,
   Text,
   View,
+  TextInput
 } = React;
 
 import { connect, Provider } from 'react-redux/native';
@@ -52,6 +53,10 @@ const App = connect(
         <Text>
         CLICKED {count} TIME{count === 1 ? '' : 'S'}!
         </Text>
+        <TextInput
+          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+          value={count}
+        />
       </View>
 
       <View style={styles.buttonContainer}>
